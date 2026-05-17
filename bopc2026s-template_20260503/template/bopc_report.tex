@@ -1,0 +1,83 @@
+\documentclass[a4paper,%
+11pt,%
+DIV12,
+headsepline,%
+headings=normal,
+]{scrartcl}
+
+\usepackage{bopc}
+\usepackage{csvsimple}
+
+%% ==================== ADAPT ACCORDINGLY ==================== %%
+
+% args: first name, last name, matriculation number
+\setAuthorOne{Jane}{Doe}{12012345}
+\setAuthorTwo{John}{Roe}{12112345}
+\setAuthorThree{Max}{Min}{14312345}
+
+% set group size and group number, group size influences author formatting
+
+% args: group size, group number (TUWEL)
+\setGroup{3}{X}
+%\setGroup{2}{X}
+
+%% =========================================================== %%
+
+\begin{document}
+
+\maketitlepage
+
+%% ================= SUBMISSION INFORMATION ================== %%
+
+% Please fill out accordingly
+
+%% ========================= REPORT ========================== %%
+
+\section{Exercise 1}
+
+\subsection{What do \texttt{a} and \texttt{t} count?}
+
+\subsection{Values for all elements in \texttt{a} and \texttt{t}}
+
+\section{Exercise 2}
+
+\subsection{Optimal Schedule}
+
+\subsection{Schedule \texttt{static,3}}
+
+\subsection{Schedule \texttt{dynamic,2}}
+
+\section{Exercise 3}
+
+\subsection{What is the output of the three different versions?}
+
+\subsection{How often is the function \texttt{omp\_tasks} called?}
+
+\section{Exercise 4}
+
+\subsection{Parallelize the pixel computation}
+
+\subsection{Running time analysis}
+
+\subsection{Influence of schedule parameter}
+
+\section{Exercise 5}
+
+\subsection{Parallelize the filter computation}
+
+\subsection{Strong scaling analysis}
+
+\subsection{Weak scaling analysis}
+
+\section{Exercise 6}
+
+\subsection{Convert OpenMP code to CUDA}
+
+\subsection{Running time analysis}
+
+\subsection{Impact of block size}
+
+\subsection{Running time: CPU vs GPU code}
+
+
+\end{document}
