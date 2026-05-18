@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 __global__ void i_print_my_tid()
 {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
