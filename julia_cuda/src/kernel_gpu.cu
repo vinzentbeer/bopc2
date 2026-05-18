@@ -12,7 +12,21 @@ __global__ void julia_kernel_gpu(float *julia_set, Complex c, float scale, int r
 
     int x = tid / res_y; 
     int y = tid % res_y;
-    julia_set[x * res_y + y] = (float)(tid % 256);
+    //julia_set[x * res_y + y] = (float)(tid % 256);
+
+    //logic yoinked from the cpu kernel
+    float scaledX = scale * x_scale * (float) (x - res_x / 2) / (res_x / 2);
+    float scaledY = scale * y_scale * (float) (y - res_y / 2) / (res_y / 2);
+
+    Complex z(scaledX, scaledY);
+
+    int i = 0;
+    for(i = 0; i < max_iter; i++) {
+        z = z * z + c;
+        if(z.magnitude2() > max_mag)
+            break;
+    }
+    julia_set[x * res_y + y] = (float)i / max_iter; //normalize to max_iter which happens in the calling code in the cpu version
 }   
 
 
